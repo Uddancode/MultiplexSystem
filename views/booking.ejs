@@ -25,7 +25,7 @@
         <div>
 
           <div class="col-lg-8">
-            <form action="#" method="post" role="form" class="php-email-form">
+            <form action="/booking" method="post" role="form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -35,8 +35,8 @@
                 </div>
               </div>
               <div class="form-group mt-3">
-                Select Movie: <select name="subject" id="subject" placeholder="Subject" style="width: 70%; height: 30px;" required>
-                  <option>Coolie No. 1</option>
+                Select Movie: <select name="movie" id="movie" placeholder="Movie" style="width: 70%; height: 30px;" required>
+                  <option>Let's Watch</option>
                   <option>Hungama 2</option>
                   <option>Hello Charlie</option>
                   <option>Mumbai Saga</option>
@@ -54,7 +54,7 @@
                 <input type="date" class="form-control" name="date" id="date" required>
               </div>
               <div class="form-group mt-3">
-                Time: <select name="subject" id="subject" placeholder="Subject" required>
+                Time: <select name="time" id="time" placeholder="Time" required>
                   <option>12 PM- 3 PM</option>
                   <option>3 PM- 6 PM</option>
                   <option>6 PM- 9 PM</option>
@@ -66,84 +66,84 @@
                 Booked- <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
                 Available-<input type="checkbox" name="Platinum" class="largecheckbox" disabled><br/>
                 <br/>Platinum (Rs. 150.00)<br/>
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="1" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="2" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="3" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="4" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="5" class="largecheckbox" checked disabled>
                 <br/>
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="6" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="7" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="8" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="9" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="10" class="largecheckbox">
                 <br/>
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="11" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="12" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="13" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="14" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="15" class="largecheckbox" checked disabled>
                 <br/>
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Platinum" class="largecheckbox">
-                <input type="checkbox" name="Platinum" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="16" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="17" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="18" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Platinum[]" value="19" class="largecheckbox">
+                <input type="checkbox" name="Platinum[]" value="20" class="largecheckbox" checked disabled>
                 <br/><br/>Gold (Rs. 100.00)<br/>
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox">
-                <input type="checkbox" name="Gold" class="largecheckbox">
-                <input type="checkbox" name="Gold" class="largecheckbox">
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="1" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="2" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="3" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="4" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="5" class="largecheckbox" checked disabled>
                 <br/>
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="6" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="7" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="8" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="9" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="10" class="largecheckbox">
                 <br/>
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox">
-                <input type="checkbox" name="Gold" class="largecheckbox">
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="11" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="12" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="13" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="14" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="15" class="largecheckbox">
                 <br/>
-                <input type="checkbox" name="Gold" class="largecheckbox">
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Gold" class="largecheckbox">
-                <input type="checkbox" name="Gold" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="16" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="17" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="18" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Gold[]" value="19" class="largecheckbox">
+                <input type="checkbox" name="Gold[]" value="20" class="largecheckbox" checked disabled>
                 <br/><br/>Silver (Rs. 75.00)<br/>
-                <input type="checkbox" name="Silver" class="largecheckbox">
-                <input type="checkbox" name="Silver" class="largecheckbox">
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Silver" class="largecheckbox">
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="1" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="2" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="3" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="4" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="5" class="largecheckbox" checked disabled>
                 <br/>
-                <input type="checkbox" name="Silver" class="largecheckbox">
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Silver" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="6" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="7" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="8" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="9" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="10" class="largecheckbox">
                 <br/>
-                <input type="checkbox" name="Silver" class="largecheckbox">
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Silver" class="largecheckbox">
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Silver" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="11" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="12" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="13" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="14" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="15" class="largecheckbox">
                 <br/>
-                <input type="checkbox" name="Silver" class="largecheckbox">
-                <input type="checkbox" name="Silver" class="largecheckbox">
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Silver" class="largecheckbox" checked disabled>
-                <input type="checkbox" name="Silver" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="16" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="17" class="largecheckbox">
+                <input type="checkbox" name="Silver[]" value="18" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="19" class="largecheckbox" checked disabled>
+                <input type="checkbox" name="Silver[]" value="20" class="largecheckbox">
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="btn" id="btn"><a href="/booking" class="main-btn mt-55">Book Your Seat</a></div>
+              <div class="text-center"><button type="submit" class="main-btn mt-55">Book Your Seat</button></div>
             </form>
           </div>
 

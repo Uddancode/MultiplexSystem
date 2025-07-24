@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 
-mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser:true});
+mongoose.connect("mongodb://localhost:27017/hellousers",{useNewUrlParser:true});
 const userSchema={
     name:String,
     mail:String,
@@ -21,6 +21,16 @@ const userSchema={
 }
 
 const User=new mongoose.model("User",userSchema);
+
+const bookingSchema = {
+    name: String,
+    email: String,
+    movie: String,
+    date: String,
+    time: String,
+    seat: String // For simplicity, store as comma-separated string
+};
+const Booking = mongoose.model('Booking', bookingSchema);
 
 
 app.get("/",(req,res)=>{
@@ -407,6 +417,50 @@ app.post("/signin",(req,res)=>{
 
     
 })
+
+app.post('/booking', async (req, res) => {
+    const { name, email, movie, date, time } = req.body;
+    // Collect all selected seats for each category using the new array field names
+    let platinum = req.body['Platinum[]'];
+    let gold = req.body['Gold[]'];
+    let silver = req.body['Silver[]'];
+    // Normalize to arrays
+    platinum = platinum ? (Array.isArray(platinum) ? platinum : [platinum]) : [];
+    gold = gold ? (Array.isArray(gold) ? gold : [gold]) : [];
+    silver = silver ? (Array.isArray(silver) ? silver : [silver]) : [];
+    // Combine all selected seats with category and seat number
+    let seatList = [];
+    platinum.forEach((num) => seatList.push(`Platinum-${num}`));
+    gold.forEach((num) => seatList.push(`Gold-${num}`));
+    silver.forEach((num) => seatList.push(`Silver-${num}`));
+    const booking = new Booking({
+        name,
+        email,
+        movie,
+        date,
+        time,
+        seat: seatList.join(', ')
+    });
+    await booking.save();
+    console.log('Booking:', {
+        name,
+        email,
+        movie,
+        date,
+        time,
+        seats: seatList
+    });
+    if (!req.session) req.session = {};
+    if (!req.session.bookings) req.session.bookings = [];
+    req.session.bookings.push(booking);
+    res.redirect('/booking-history');
+});
+
+app.get('/booking-history', async (req, res) => {
+    // For demo, show all bookings. For per-user, filter by email or session.
+    const bookings = await Booking.find({});
+    res.render('booking-history', { bookings });
+});
 
 
 app.listen(3000,()=>{
